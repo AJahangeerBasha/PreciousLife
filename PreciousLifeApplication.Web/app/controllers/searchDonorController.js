@@ -8,8 +8,9 @@ app.controller('searchDonorController', ['$scope', 'donorService', function ($sc
     };
 
     donorService.loadSearch().then(function(response) {
-
+        console.log(response);
     });
+    
     //authService.login($scope.loginData).then(function (response) {
     //    //$location.path('/dashbaord');
     //},

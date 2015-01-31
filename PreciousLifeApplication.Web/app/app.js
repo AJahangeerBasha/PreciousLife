@@ -45,6 +45,15 @@ app.config(function($popoverProvider) {
     });
 });
 
+app.config(function ($httpProvider) {
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  });
+app.all("/api/*", function () {
+    $http.request.header("Access-Control-Allow-Origin", "*");
+    $http.request.header("Access-Control-Allow-Headers", "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With");
+    $http.request.header("Access-Control-Allow-Methods", "GET, PUT, POST");
+    return $http.next();
+});
 app.run(['authService', function (authService) {
 
 }]);    
