@@ -33,6 +33,14 @@ app.config(function ($routeProvider) {
         //controller: "searchDonorController",
         templateUrl: "/app/views/smssent.html"
     });
+    $routeProvider.when("/requestor", {
+        //controller: "searchDonorController",
+        templateUrl: "/app/views/requestor.html"
+    });
+    $routeProvider.when("/donor", {
+        //controller: "searchDonorController",
+        templateUrl: "/app/views/donor.html"
+    });
     $routeProvider.otherwise({ redirectTo: "/dashboard" });
 
 });

@@ -93,6 +93,8 @@
     <Content Include="app\services\factory1.js" />
     <Content Include="app\services\tokensManagerService.js" />
     <Content Include="app\views\dashboard.html" />
+    <Content Include="app\views\Donor.html" />
+    <Content Include="app\views\Requestor.html" />
     <Content Include="app\views\smssent.html" />
     <Content Include="app\views\Facebook.html" />
     <Content Include="app\views\home.html" />

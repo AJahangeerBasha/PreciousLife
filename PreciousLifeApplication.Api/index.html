@@ -29,9 +29,13 @@
                     <li data-ng-hide="!authentication.isAuth"><a href="#">Welcome {{authentication.userName}}</a></li>
                     <li data-ng-hide="!authentication.isAuth"><a href="" data-ng-click="logOut()">Logout</a></li>
                     <li data-ng-hide="authentication.isAuth"> <a href="#/dashboard">Dashboard</a></li>
-                    <li data-ng-hide="authentication.isAuth"> <a href="#/searchDonor">Donors</a></li>
+                    <li data-ng-hide="authentication.isAuth"> <a href="#/searchDonor">Search</a></li>
+                    
+                    <!--<li data-ng-hide="authentication.isAuth"> <a href="#/facebook">Facebook</a></li>-->
+                    
                     <li data-ng-hide="authentication.isAuth"> <a href="#/requestor">Requestor</a></li>
-                    <li data-ng-hide="authentication.isAuth"> <a href="#/facebook">Facebook</a></li>
+                    <li data-ng-hide="authentication.isAuth"> <a href="#/donor">Donor</a></li>
+                    
                     <li data-ng-hide="authentication.isAuth"> <a href="#/login">Login</a></li>
                     <li data-ng-hide="authentication.isAuth"> <a href="#/signup">Sign Up</a></li>
                 </ul>
