@@ -1,17 +1,10 @@
 ﻿'use strict';
-app.controller('searchDonorController', ['$scope', 'donorService', function ($scope, donorService) {
+app.controller('searchDonorController', ['$scope', '$location', 'donorService', function ($scope, $location, donorService) {
 
     $scope.selectedCenter = "";
     $scope.showResults = false;
     $scope.searchDonors = function() {
-        console.log("inside search fn");
-        console.log($scope.selectedCenter);
-        console.log($scope.selectedBloodGroup);
-        console.log($scope.pincodeRange);
-
-
         donorService.searchDonor($scope.selectedCenter.Pincode, $scope.selectedBloodGroup.type, $scope.pincodeRange).then(function(response) {
-            console.log(response.data);
             $scope.searchResultDonors = response.data;
         });
         $scope.showResults = true;
@@ -23,11 +16,12 @@ app.controller('searchDonorController', ['$scope', 'donorService', function ($sc
         $scope.CollectionCenters = response.data;
     });
 
-    $scope.sendSms = function() {
+    $scope.sendSms = function () {
+        $location.path('/smssent');
         console.log($scope.searchResultDonors);
-        donorService.sendChosenDonor($scope.searchResultDonors).then(function(response) {
-            console.log("sent sms");
-        });
+        //donorService.sendChosenDonor($scope.searchResultDonors).then(function(response) {
+        //    console.log("sent sms");
+        //});
     };
     //authService.login($scope.loginData).then(function (response) {
     //    //$location.path('/dashbaord');

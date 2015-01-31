@@ -10,7 +10,7 @@ app.controller('loginController', ['$scope', '$location', 'authService', 'ngAuth
     $scope.message = "";
 
     $scope.login = function () {
-        $location.path('/dashbaord');
+        $location.path('/dashboard');
         //authService.login($scope.loginData).then(function (response) {
         //    //$location.path('/dashbaord');
         //},

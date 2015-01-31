@@ -12,13 +12,13 @@ namespace PreciousLifeApplication.ConsoleApp
     {
         static void Main(string[] args)
         {
-            //CollectionCenterInsert();
+            CollectionCenterInsert();
             //RequestorCreate();
             //DonorsCreate();
             //CollectionCenterInsertMultiple();
             //RequestorCreateMultiple();
             //DonorsCreateMultiple();
-            IntrestedDonorCreate();
+            //IntrestedDonorCreate();
         }
 
         private static void IntrestedDonorCreate()
@@ -40,7 +40,7 @@ namespace PreciousLifeApplication.ConsoleApp
         private static void CollectionCenterInsert()
         {
             var cc = new CollectionCentre();
-            cc.CenterName = "Collection Center1";
+            cc.CenterName = "Jain Hospital";
             cc.Address = "123, Street Name, KP";
             cc.Pincode = 400100;
             cc.IsActive = true;

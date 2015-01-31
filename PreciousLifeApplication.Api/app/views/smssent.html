@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">
+        function OnPostDate() {
+            document.getElementById("tr1").style.display = 'none';
+            document.getElementById("tr2").style.display = 'none';
+            document.getElementById("tr3").style.display = '';
+        }
+    </script>
+</head>
+<body>
+    <table class="table table-bordered table-striped table-responsive">
+        <tr id="tr1">
+            <td align="center"><h3>SMS has been sent to selected donors!</h3></td>
+            
+        </tr>
+        <tr id="tr2">
+            <td align="center">
+                <a class="btn btn-primary" href="#/dashboard">Go to Dashboard</a>               
+            </td>
+        </tr>
+        <tr id="tr3" style="display: none;">
+            <td align="center">
+                <a><img src="FaceBook.jpg" /></a>
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>

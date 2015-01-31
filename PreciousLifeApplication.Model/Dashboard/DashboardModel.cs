@@ -66,5 +66,9 @@ namespace PreciousLifeApplication.Model.Dashboard
 
         public DateTime DonatedDate { get; set; }
 
+        public DateTime? AppointmentChangedDate { get; set; }
+
+        public int ChangedCollectionCenter { get; set; }
     }
 }
+

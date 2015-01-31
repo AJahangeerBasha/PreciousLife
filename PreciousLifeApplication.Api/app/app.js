@@ -25,7 +25,15 @@ app.config(function ($routeProvider) {
         controller: "searchDonorController",
         templateUrl: "/app/views/searchDonor.html"
     });
-    $routeProvider.otherwise({ redirectTo: "/pagenotfound" });
+    $routeProvider.when("/facebook", {
+        //controller: "searchDonorController",
+        templateUrl: "/app/views/facebook.html"
+    });
+    $routeProvider.when("/smssent", {
+        //controller: "searchDonorController",
+        templateUrl: "/app/views/smssent.html"
+    });
+    $routeProvider.otherwise({ redirectTo: "/dashboard" });
 
 });
 

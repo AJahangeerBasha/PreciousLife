@@ -19,17 +19,30 @@ namespace PreciousLifeApplication.Api.Services
 
         public List<DonorModel> GetSearchResults(int pincode, string bloodGroup, int pincodeRange)
         {
+            //var minValue = pincode - pincodeRange;
+            //var maxValue = pincode + pincodeRange;
+            ////var donors = _db.Doners.Where(d => int.Parse(d.PinCode) >= minValue && int.Parse(d.PinCode) <= maxValue);
+
+            ////delete the below line:
+            //var donors = _db.Doners.ToList();
+            //// to do => need to take care of AGE + Weight + 15 days
+
+            //var models = MapEntitiesToModels(donors.ToList());
+            //return models.ToList();
+
+            var eliglibledononrs = new List<Donor>();
+            DateTime startDate = new DateTime(2010, 1, 1);
+            DateTime endDate = DateTime.Now;
+            var totalDays = (endDate - startDate).TotalDays;
+            var totalYears = Math.Truncate(totalDays / 365);
             var minValue = pincode - pincodeRange;
             var maxValue = pincode + pincodeRange;
-            //var donors = _db.Doners.Where(d => int.Parse(d.PinCode) >= minValue && int.Parse(d.PinCode) <= maxValue);
+            var donors = _db.Doners.Where(d => d.PinCode >= minValue && d.PinCode <= maxValue && d.BloodGroup == bloodGroup).ToList();
+            var minAllowedAge = 18; var maxAllowedAge = 58; var donationDaysLimit = 15;
 
-            //delete the below line:
-            var donors = _db.Doners.ToList();
-            // to do => need to take care of AGE + Weight + 15 days
-
+            donors = donors.Where(s => (DateTime.Now.Year - s.DateOfBirth.Year >= minAllowedAge) && (DateTime.Now.Year - s.DateOfBirth.Year <= maxAllowedAge)).ToList();
             var models = MapEntitiesToModels(donors.ToList());
             return models.ToList();
-
 
         }
 

@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">
+        function OnPostDate() {
+            alert('Posted to Facebook');
+            document.getElementById("tr1").style.display = 'none';
+            document.getElementById("tr2").style.display = 'none';
+            document.getElementById("tr3").style.display = '';
+        }
+    </script>
+</head>
+<body>
+    <table class="table table-bordered table-striped table-responsive">
+        <tr id="tr1">
+            <td align="center"><h3>Do you need to Post Donation request to Facebook</h3></td>
+            
+        </tr>
+        <tr id="tr2">
+            <td align="center">
+                <button type="submit" class="btn btn-default" onclick="OnPostDate()">Post</button>
+            </td>
+        </tr>
+        <tr id="tr3" style="display: none;">
+            <td align="center">
+                <a><img src="FaceBook.jpg" /></a>
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>

@@ -93,6 +93,8 @@
     <Content Include="app\services\factory1.js" />
     <Content Include="app\services\tokensManagerService.js" />
     <Content Include="app\views\dashboard.html" />
+    <Content Include="app\views\smssent.html" />
+    <Content Include="app\views\Facebook.html" />
     <Content Include="app\views\home.html" />
     <Content Include="app\views\login.html" />
     <Content Include="app\views\popover.tpl.demo.html" />
@@ -110,6 +112,7 @@
     <Content Include="Content\loading-bar.min.css" />
     <Content Include="Content\site.css" />
     <Content Include="Content\social-buttons.css" />
+    <Content Include="Facebook.jpg" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

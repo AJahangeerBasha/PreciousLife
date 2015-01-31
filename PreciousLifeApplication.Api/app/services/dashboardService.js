@@ -10,7 +10,14 @@ app.factory('dashboardService', ['$http', '$q', 'localStorageService', 'ngAuthSe
         });
     };
     
+    var postUpdateDonor = function (donor) {
+        return $http.put(serviceBase + 'api/dashboard/updatedonor', donor ).then(function (response) {
+            return response;
+        });
+    };
+    
     
     dashboardServiceFactory.getDashboardData = getDashboardData;
+    dashboardServiceFactory.postUpdateDonor = postUpdateDonor;
     return dashboardServiceFactory;
 }]);
