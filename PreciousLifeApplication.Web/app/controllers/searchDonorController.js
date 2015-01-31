@@ -1,11 +1,21 @@
 ﻿'use strict';
-app.controller('searchDonorController', ['$scope', function ($scope) {
+app.controller('searchDonorController', ['$scope', 'donorService', function ($scope, donorService) {
 
     $scope.showResults = false;
     $scope.searchDonors = function() {
-        console.log("isnide search fn");
+        console.log("inside search fn");
         $scope.showResults = true;
     };
+
+    donorService.loadSearch().then(function(response) {
+
+    });
+    //authService.login($scope.loginData).then(function (response) {
+    //    //$location.path('/dashbaord');
+    //},
+    // function (err) {
+    //     $scope.message = err.error_description;
+    // });
     
     $scope.searchResultDonors = {        
         Donors: [

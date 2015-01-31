@@ -71,6 +71,7 @@
     <Content Include="app\controllers\searchDonorController.js" />
     <Content Include="app\controllers\signupController.js" />
     <Content Include="app\services\authInterceptorService.js" />
+    <Content Include="app\services\donorService.js" />
     <Content Include="app\services\authService.js" />
     <Content Include="app\services\factory1.js" />
     <Content Include="app\services\tokensManagerService.js" />
