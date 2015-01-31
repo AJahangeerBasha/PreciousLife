@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+    <meta name="keywords" content="Preciouse Life, AngularJS, SPA" />
+    <meta name="description" content="" />
+    <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" />
+    <title>Precious Life</title>
+    <link href="content/bootstrap.css" rel="stylesheet" />
+    <link href="content/site.css" rel="stylesheet" />
+    <link href="content/loading-bar.css" rel="stylesheet" />
+    <link href="content/font-awesome.min.css" rel="stylesheet" />
+    <link href="content/social-buttons.css" rel="stylesheet" />
+    <link href="Content/angular-motion.css" rel="stylesheet" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" data-ng-controller="indexController">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="btn btn-success navbar-toggle" data-ng-click="navbarExpanded = !navbarExpanded">
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                </button>
+                <a class="navbar-brand" href="#/home">Home</a>
+            </div>
+            <div class="collapse navbar-collapse" data-collapse="!navbarExpanded">
+                <ul class="nav navbar-nav navbar-right">
+                    <li data-ng-hide="!authentication.isAuth"><a href="#">Welcome {{authentication.userName}}</a></li>
+                    <li data-ng-hide="!authentication.isAuth"><a href="" data-ng-click="logOut()">Logout</a></li>
+                    <li data-ng-hide="authentication.isAuth"> <a href="#/dashboard">Dashboard</a></li>
+                    <li data-ng-hide="authentication.isAuth"> <a href="#/searchDonor">Donors</a></li>
+                    <li data-ng-hide="authentication.isAuth"> <a href="#/login">Login</a></li>
+                    <li data-ng-hide="authentication.isAuth"> <a href="#/signup">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="page-header text-center">
+                <h1>Precious Life - Tek@Thon</h1>
+            </div>
+            <p>Platelets play the important role of formation of a clot whenever there is a rupture of a blood vessel. The clot seals the blood vessel and prevents any further loss of life-saving blood.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div data-ng-view="">
+        </div>
+    </div>
+
+    <hr />
+
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-muted">Created by Precious Life.</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-muted">Tek@Thon - Mastek - Think Foundation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3rd party libraries -->
+    <script src="Scripts/jquery-1.9.0.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="scripts/angular-local-storage.js"></script>
+    <script src="Scripts/angular-animate.js"></script>
+    <script src="Scripts/angular-sanitize.js"></script>
+    <script src="scripts/loading-bar.min.js"></script>
+
+    <script src="Scripts/angular-strap.js"></script>
+    <script src="Scripts/angular-strap.tpl.js"></script>
+    <!--<script src="Scripts/underscore.js"></script>-->
+    <!-- Load app main script -->
+    <script src="app/app.js"></script>
+
+    <!-- Load services -->
+    <script src="app/services/authInterceptorService.js"></script>
+    <script src="app/services/authService.js"></script>
+    <script src="app/services/tokensManagerService.js"></script>
+
+    <!-- Load controllers -->
+    <script src="app/controllers/indexController.js"></script>
+    <script src="app/controllers/homeController.js"></script>
+    <script src="app/controllers/loginController.js"></script>
+    <script src="app/controllers/signupController.js"></script>
+    <script src="app/controllers/dashboardController.js"></script>
+    <script src="app/controllers/searchDonorController.js"></script>
+    <!-- Load custom filters -->
+    <!-- Load custom directives -->
+
+</body>
+</html>
