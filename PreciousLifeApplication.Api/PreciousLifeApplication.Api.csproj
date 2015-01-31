@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\common.js" />
     <Content Include="app\controllers\dashboardController.js" />
     <Content Include="app\controllers\homeController.js" />
     <Content Include="app\controllers\indexController.js" />
@@ -87,6 +88,7 @@
     <Content Include="app\controllers\signupController.js" />
     <Content Include="app\services\authInterceptorService.js" />
     <Content Include="app\services\authService.js" />
+    <Content Include="app\services\dashboardService.js" />
     <Content Include="app\services\donorService.js" />
     <Content Include="app\services\factory1.js" />
     <Content Include="app\services\tokensManagerService.js" />
@@ -891,6 +893,10 @@
     <Content Include="Scripts\jquery-1.9.0.min.js" />
     <Content Include="Scripts\loading-bar.js" />
     <Content Include="Scripts\loading-bar.min.js" />
+    <Content Include="Scripts\lodash.js" />
+    <Content Include="Scripts\lodash.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Web.config" />
   </ItemGroup>

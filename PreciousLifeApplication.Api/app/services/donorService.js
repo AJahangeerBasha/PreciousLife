@@ -16,8 +16,15 @@ app.factory('donorService', ['$http', '$q', 'localStorageService', 'ngAuthSettin
             return response;
         });
     };
+
+    var sendChosenDonor = function(donors) {
+        return $http.post(serviceBase + 'api/donors/PostSendSms', donors).then(function (response) {
+            return response;
+        });
+    };
     
     donorServiceFactory.loadSearch = loadSearch;
     donorServiceFactory.searchDonor = searchDonor;
+    donorServiceFactory.sendChosenDonor = sendChosenDonor;
     return donorServiceFactory;
 }]);

@@ -36,26 +36,24 @@
                         <th>Name</th>
                         <th>Date of Birth</th>
                         <th>Contact Number</th>
-                        <th>Alternate Number</th>
                         <th>PinCode</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr data-ng-repeat="donor in searchResultDonors.Donors">
+                    <tr data-ng-repeat="donor in searchResultDonors">
                         <td>{{ donor.Id }}</td>
                         <td>{{ donor.Name }}</td>
                         <td>{{ donor.DateOfBirth }}</td>
                         <td>{{ donor.ContactNumber }}</td>
-                        <td>{{ donor.AlternateNumber }}</td>
                         <td>{{ donor.PinCode }}</td>
                         <td>
-                            <input type="checkbox" />
+                            <input type="checkbox" data-ng-model="donor.Chosen" ng-checked="donor.Chosen" />
                         </td>
                     </tr>
                 </tbody>
             </table>
-            <input type="button" value="Send SMS" class="pull-right" />
+            <input type="button" value="Send SMS" class="btn btn-primary pull-right" data-ng-click="sendSms()" />
         </div>
 
     </article>

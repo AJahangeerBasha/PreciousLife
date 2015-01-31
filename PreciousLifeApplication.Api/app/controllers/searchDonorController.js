@@ -22,57 +22,63 @@ app.controller('searchDonorController', ['$scope', 'donorService', function ($sc
     donorService.loadSearch().then(function(response) {
         $scope.CollectionCenters = response.data;
     });
-    
+
+    $scope.sendSms = function() {
+        console.log($scope.searchResultDonors);
+        donorService.sendChosenDonor($scope.searchResultDonors).then(function(response) {
+            console.log("sent sms");
+        });
+    };
     //authService.login($scope.loginData).then(function (response) {
     //    //$location.path('/dashbaord');
     //},
     // function (err) {
     //     $scope.message = err.error_description;
     // });
-    
-    $scope.searchResultDonors = {        
-        Donors: [
-                  {
-                      Id: 1,
-                      Name: "DonorName1",
-                      Address: "31, First Street, KoperKharanae",
-                      City: "Mumbai",
-                      PinCode: 123456,
-                      DateOfBirth: "12/12/1980",
-                      ContactNumber: "123456789",
-                      AlternateNumber: "987654123",
-                      Weight: "65Kg"
-                  }, {
-                      Id: 2,
-                      Name: "DonorName2",
-                      Address: "28, Second Street, KoperKharanae",
-                      City: "Mumbai",
-                      PinCode: 123444,
-                      DateOfBirth: "10/10/1980",
-                      ContactNumber: "123456789",
-                      AlternateNumber: "987654123",
-                      Weight: "65Kg"
-                  }, {
-                      Id: 3,
-                      Name: "DonorName3",
-                      Address: "31, First Street, KoperKharanae",
-                      City: "Mumbai",
-                      PinCode: 123456,
-                      DateOfBirth: "12/12/1980",
-                      ContactNumber: "123456789",
-                      AlternateNumber: "987654123",
-                      Weight: "65Kg"
-                  }, {
-                      Id: 4,
-                      Name: "DonorName4",
-                      Address: "28, Second Street, KoperKharanae",
-                      City: "Mumbai",
-                      PinCode: 123444,
-                      DateOfBirth: "10/10/1980",
-                      ContactNumber: "123456789",
-                      AlternateNumber: "987654123",
-                      Weight: "65Kg"
-                  }
-        ]
-    };
+
+    //$scope.searchResultDonors = {        
+    //    Donors: [
+    //              {
+    //                  Id: 1,
+    //                  Name: "DonorName1",
+    //                  Address: "31, First Street, KoperKharanae",
+    //                  City: "Mumbai",
+    //                  PinCode: 123456,
+    //                  DateOfBirth: "12/12/1980",
+    //                  ContactNumber: "123456789",
+    //                  AlternateNumber: "987654123",
+    //                  Weight: "65Kg"
+    //              }, {
+    //                  Id: 2,
+    //                  Name: "DonorName2",
+    //                  Address: "28, Second Street, KoperKharanae",
+    //                  City: "Mumbai",
+    //                  PinCode: 123444,
+    //                  DateOfBirth: "10/10/1980",
+    //                  ContactNumber: "123456789",
+    //                  AlternateNumber: "987654123",
+    //                  Weight: "65Kg"
+    //              }, {
+    //                  Id: 3,
+    //                  Name: "DonorName3",
+    //                  Address: "31, First Street, KoperKharanae",
+    //                  City: "Mumbai",
+    //                  PinCode: 123456,
+    //                  DateOfBirth: "12/12/1980",
+    //                  ContactNumber: "123456789",
+    //                  AlternateNumber: "987654123",
+    //                  Weight: "65Kg"
+    //              }, {
+    //                  Id: 4,
+    //                  Name: "DonorName4",
+    //                  Address: "28, Second Street, KoperKharanae",
+    //                  City: "Mumbai",
+    //                  PinCode: 123444,
+    //                  DateOfBirth: "10/10/1980",
+    //                  ContactNumber: "123456789",
+    //                  AlternateNumber: "987654123",
+    //                  Weight: "65Kg"
+    //              }
+    //    ]
+    //};
 }]);

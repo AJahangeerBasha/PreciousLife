@@ -18,6 +18,24 @@ namespace PreciousLifeApplication.ConsoleApp
             //CollectionCenterInsertMultiple();
             //RequestorCreateMultiple();
             //DonorsCreateMultiple();
+            IntrestedDonorCreate();
+        }
+
+        private static void IntrestedDonorCreate()
+        {
+            var id = new InterestedDonor();
+            id.DonorId = 1;
+            id.CollectionCentreId = 1;
+            id.ContactNumber = "12345";
+            id.Status = "Sent";
+            id.SMSSentDate = DateTime.Now;
+            id.RepliedOn = DateTime.Now;
+            id.AppointmentScheduled = DateTime.Now;
+            id.DonatedDate = DateTime.Now;
+
+            var db = new PreciousLifeDbContext();
+            db.IDonors.Add(id);
+            db.SaveChanges();
         }
         private static void CollectionCenterInsert()
         {

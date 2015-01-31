@@ -4,31 +4,32 @@
                 <li>{{ item }}</li>
                 <li><input ng-model="item"></li>
             </ul>-->
-        <div class="col-md-12" data-ng-repeat="collectionCenter in dashboardData.CollectionCenters">
+        <div class="col-md-12" data-ng-repeat="collectionCenter in dashboardData">
             <hgroup>
                 <h2>{{ collectionCenter.Name }}</h2>
-                <h5 data-ng-repeat="expDates in collectionCenter.ExpectedDates">
-                   {{ expDates.ExpectedDate}}
+                <h5 data-ng-repeat="expDate in collectionCenter.ExpectedDates">
+                   {{ expDate.Date}}
                 </h5>
             </hgroup>
             
             <div class="col-md-4" data-ng-repeat="expDates in collectionCenter.ExpectedDates">
                 <div class="col-md-12">
-                    <h3 class="col-md-6">{{ expDates.ExpectedDate}}</h3>
-                    <h3 class="col-md-6">{{ expDates.ExpectedQuantity}}</h3>
+                    <h3 class="col-md-6">{{ expDates.Date}}</h3>
+                    <h3 class="col-md-6">{{ expDates.Quantity}}</h3>
                     <!--Requestors-->
                     <div class="row" data-ng-repeat="req in expDates.Requestors">
-                        <h5 class="col-md-6">{{ req.Name }}</h5>
+                        <h5 class="col-md-6">{{ req.RequestorName }}</h5>
                         <span class="col-md-6">{{ req.Quantity }}</span>
                     </div>
                     <!--Donors-->
-                    <div class="row" data-ng-repeat="donor in expDates.Donors">
+                    <div class="row" data-ng-repeat="donor in expDates.IntrestedDonors">
                         <!--<h5 class="col-md-12">{{ donor.Name }}</h5>-->
-                        <button type="button" class="btn btn-lg btn-danger" title="{{donor.Name}}" data-content="{{donor}}" data-template="popoverTplDemo.html" data-animation="am-flip-x" data-auto-close="1" bs-popover>
+                        <button type="button" class="btn btn-primary" title="{{donor.Name}}" data-content="{{donor}}" 
+                                data-template="popoverTplDemo.html" data-animation="am-flip-x" data-auto-close="1" bs-popover>
                             {{ donor.Name }}
                         </button>
+                        <span>{{ donor.Status}}</span>
                     </div>
-                    
                    
                 </div>
             </div>
@@ -42,8 +43,10 @@
                         <form name="popoverForm" style="min-width:300px;">
                             <!--<p ng-bind-html="content" style="min-width:300px;"></p>-->
                             <h3 ng-cloak>{{ donor.ContactNumber }}</h3>
-                            PinCode: <span>{{ donor.PinCode }}</span>
-                            Weight: <span>{{ donor.Weight }}</span>
+                            SmsSentOn: <span>{{ donor.SmsSentDate }}</span>
+                            RepliedOn: <span>{{ donor.RepliedOn }}</span>
+                            AppointmentScheduled: <span>{{ donor.AppointmentScheduled }}</span>
+                            DonatedDate: <span>{{ donor.DonatedDate }}</span>
                             <div class="form-actions">
                                 <button type="button" class="btn btn-danger" ng-click="$hide()">Close</button>
                                 <button type="button" class="btn btn-primary" ng-click="popover.saved=true; updateDonor(donor); $hide()">Save changes</button>

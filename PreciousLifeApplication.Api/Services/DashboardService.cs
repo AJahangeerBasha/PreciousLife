@@ -18,7 +18,7 @@ namespace PreciousLifeApplication.Api.Services
         public List<CollectionCenterDModel> GetDashboardData()
         {
             var dashboardModel = new DashboardModel();
-
+            
             var collectioncenterService = new CollectionCenterService();
 
             var collectioncenters = new List<CollectionCenterDModel>();

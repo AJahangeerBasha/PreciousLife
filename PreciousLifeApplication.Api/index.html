@@ -36,14 +36,16 @@
             </div>
         </div>
     </div>
-    <div class="jumbotron">
+    <br />
+    <br />
+    <!--<div class="jumbotron">
         <div class="container">
             <div class="page-header text-center">
                 <h1>Precious Life - Tek@Thon</h1>
             </div>
             <p>Platelets play the important role of formation of a clot whenever there is a rupture of a blood vessel. The clot seals the blood vessel and prevents any further loss of life-saving blood.</p>
         </div>
-    </div>
+    </div>-->
 
     <div class="container">
         <div data-ng-view="">
@@ -77,15 +79,17 @@
     <script src="Scripts/angular-strap.js"></script>
     <script src="Scripts/angular-strap.tpl.js"></script>
     <!--<script src="Scripts/underscore.js"></script>-->
+    <script src="Scripts/lodash.js"></script>
+    <script src="Scripts/moment.js"></script>
     <!-- Load app main script -->
     <script src="app/app.js"></script>
-
+    <script src="app/common.js"></script>
     <!-- Load services -->
     <script src="app/services/authInterceptorService.js"></script>
     <script src="app/services/authService.js"></script>
     <script src="app/services/tokensManagerService.js"></script>
     <script src="app/services/donorService.js"></script>
-
+    <script src="app/services/dashboardService.js"></script>
     <!-- Load controllers -->
     <script src="app/controllers/indexController.js"></script>
     <script src="app/controllers/homeController.js"></script>
